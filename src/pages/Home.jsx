@@ -1,0 +1,176 @@
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
+import { useEffect } from 'react'
+import './Home.css'
+
+function Home() {
+  useEffect(() => {
+    document.title = 'hiro labs - Infrastructure for Modern Companies'
+  }, [])
+
+  return (
+    <div className="home">
+      <section className="hero">
+        <div className="hero-container">
+          <div className="hero-label">hiro labs</div>
+          <h1 className="hero-title">
+            We design the infrastructure<br />
+            modern companies grow on.
+          </h1>
+          <p className="hero-subtitle">
+            We architect and deploy production-grade systems — from data infrastructure to full-stack 
+            applications — built to perform under real-world load and scale without fragility.
+          </p>
+          <div className="hero-principles">
+            <span>architecture-first</span>
+            <span>cloud-native</span>
+            <span>built for durability</span>
+          </div>
+          <div className="hero-actions">
+            <Link to="/projects" className="btn btn-primary">
+              view work
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              start a conversation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="why-hiro">
+        <div className="container">
+          <h2>Why hiro labs?</h2>
+          <p>
+            The name hiro (広) means "wide" or "expansive" in Japanese. It reflects our approach to building 
+            systems that are fast, comprehensive, and designed to scale with your needs. We believe technology 
+            today exists in a vast, interconnected ecosystem with the power to create real-world impact — and 
+            we build with that scope in mind.
+          </p>
+        </div>
+      </section>
+
+      <section className="philosophy">
+        <div className="container">
+          <h2>Most software breaks under growth.</h2>
+          <p>
+            It isn't a performance problem — it's an architecture problem.
+          </p>
+          <p>
+            We design systems intentionally: starting with data models, defining API boundaries, 
+            planning deployment strategies, and building infrastructure that remains clear and 
+            maintainable over time.
+          </p>
+        </div>
+      </section>
+
+      <section className="credibility">
+        <div className="container">
+          <div className="credibility-grid">
+            <div className="credibility-item">
+              <span>10 production systems delivered</span>
+            </div>
+            <div className="credibility-item">
+              <span>Nationwide data ingestion pipelines</span>
+            </div>
+            <div className="credibility-item">
+              <span>AWS-native deployment environments</span>
+            </div>
+            <div className="credibility-item">
+              <span>Full SDLC ownership</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="selected-work">
+        <div className="container">
+          <div className="section-header">
+            <h2>Selected Work</h2>
+            <Link to="/projects" className="view-all">
+              View All <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="work-grid">
+            <WorkCard
+              image="/projects/nomadic.webp"
+              category="Full-Stack Platform"
+              title="Nomadic Influence"
+              description="SaaS platform connecting creators with business opportunities. Stripe subscriptions, Firebase auth, Google Calendar integration."
+              tech="Django, React, PostgreSQL, AWS"
+            />
+            <WorkCard
+              image="/projects/nexus.webp"
+              category="Corporate Website"
+              title="Nexus RV"
+              description="Corporate website for premium RV manufacturer. 40+ floor plans, dealer locator with Mapbox, comprehensive CMS."
+              tech="Django, React, Mapbox"
+            />
+            <WorkCard
+              image="/projects/wecare.webp"
+              category="Content Platform"
+              title="We Care Broadcasting"
+              description="Content-managed website for broadcasting network with program listings, broadcaster profiles, and event management."
+              tech="Django, React, PostgreSQL"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="what-we-build">
+        <div className="container">
+          <h2>What We Build</h2>
+          <div className="build-grid">
+            <div className="build-item">
+              <h3>Data Infrastructure</h3>
+              <p>ETL pipelines, real-time data processing, and analytics systems designed for scale and reliability.</p>
+            </div>
+            <div className="build-item">
+              <h3>Full-Stack Platforms</h3>
+              <p>Complete web applications with robust backends, responsive interfaces, and integrated payment systems.</p>
+            </div>
+            <div className="build-item">
+              <h3>Automation Systems</h3>
+              <p>Deployment automation, monitoring tools, and workflow integrations that reduce operational overhead.</p>
+            </div>
+            <div className="build-item">
+              <h3>Cloud Architecture</h3>
+              <p>AWS infrastructure design and implementation with focus on availability, security, and cost efficiency.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="founder">
+        <div className="container">
+          <h2>Founder-led. Architecture-driven.</h2>
+          <p>
+            Led by Roddy Brown, a senior software engineer with 8+ years building production systems 
+            for companies ranging from insurance to government agencies. Every project is approached 
+            with architectural discipline and long-term maintainability in mind.
+          </p>
+          <Link to="/about" className="founder-link">
+            about the studio
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function WorkCard({ image, category, title, description, tech }) {
+  return (
+    <div className="work-card">
+      <div className="work-image">
+        <img src={image} alt={title} />
+      </div>
+      <div className="work-info">
+        <div className="work-category">{category}</div>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div className="work-tech">{tech}</div>
+      </div>
+    </div>
+  )
+}
+
+export default Home

@@ -1,0 +1,10 @@
+<svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid pattern icon -->
+  <rect x="0" y="8" width="7" height="7" rx="1" fill="#14b8a6"/>
+  <rect x="9" y="8" width="7" height="7" rx="1" fill="#14b8a6" opacity="0.6"/>
+  <rect x="0" y="17" width="7" height="7" rx="1" fill="#14b8a6" opacity="0.6"/>
+  <rect x="9" y="17" width="7" height="7" rx="1" fill="#14b8a6"/>
+  
+  <!-- Text: hiro labs -->
+  <text x="24" y="21" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="#e6edf3">hiro labs</text>
+</svg>

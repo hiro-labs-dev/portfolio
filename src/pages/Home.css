@@ -1,0 +1,412 @@
+.home {
+  width: 100%;
+}
+
+.hero {
+  padding: 80px 48px 100px;
+  background: var(--bg-primary);
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 28px;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+
+.hero-principles {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.hero-principles span {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+  letter-spacing: 0.3px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-primary:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.philosophy {
+  padding: 120px 48px;
+  background: var(--bg-secondary);
+}
+
+.philosophy .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.philosophy h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  max-width: 700px;
+}
+
+.philosophy p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.credibility {
+  padding: 80px 48px;
+  background: var(--bg-primary);
+}
+
+.credibility .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.credibility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.credibility-item {
+  background: var(--bg-primary);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.credibility-item span {
+  font-size: 14px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.selected-work {
+  padding: 120px 48px;
+  background: var(--bg-secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.view-all:hover {
+  color: var(--text-primary);
+  gap: 12px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-tertiary);
+}
+
+.work-card:hover h3 {
+  color: var(--accent-blue);
+}
+
+.work-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.work-info {
+  padding: 24px;
+}
+
+.work-category {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+}
+
+.work-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.work-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.work-tech {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+}
+
+.what-we-build {
+  padding: 120px 48px;
+  background: var(--bg-primary);
+}
+
+.what-we-build h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 56px;
+  letter-spacing: -0.02em;
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.build-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.build-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.founder {
+  padding: 120px 48px;
+  background: var(--bg-secondary);
+}
+
+.founder h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  max-width: 700px;
+}
+
+.founder p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+
+.founder-link {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.founder-link:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 24px 80px;
+  }
+  
+  .hero-title {
+    font-size: 40px;
+  }
+  
+  .hero-principles {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .philosophy,
+  .selected-work,
+  .what-we-build,
+  .founder {
+    padding: 80px 24px;
+  }
+  
+  .philosophy h2,
+  .section-header h2,
+  .what-we-build h2,
+  .founder h2 {
+    font-size: 32px;
+  }
+  
+  .credibility-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .build-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-hiro {
+  padding: 80px 48px;
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.why-hiro .container {
+  max-width: 800px;
+}
+
+.why-hiro h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.why-hiro p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}

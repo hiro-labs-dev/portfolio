@@ -1,0 +1,5 @@
+invoice_id,client,email,status,issue_date,due_date,milestone,notes,stripe_link,description,details,quantity,unit,rate
+INV-2026-001,Acme Corp,billing@example.com,sent,2026-04-01,2026-04-15,Milestone 2 of 4 — API Development,Payment due within 14 days,,API architecture & endpoint design,RESTful API design for user management and billing,12,hrs,150
+INV-2026-001,Acme Corp,billing@example.com,sent,2026-04-01,2026-04-15,Milestone 2 of 4 — API Development,Payment due within 14 days,,Stripe payment integration,Checkout sessions and webhook handling,8,hrs,150
+INV-2026-001,Acme Corp,billing@example.com,sent,2026-04-01,2026-04-15,Milestone 2 of 4 — API Development,Payment due within 14 days,,Database schema & migrations,PostgreSQL schema design and Django models,6,hrs,150
+INV-2026-001,Acme Corp,billing@example.com,sent,2026-04-01,2026-04-15,Milestone 2 of 4 — API Development,Payment due within 14 days,,Testing & QA,Unit tests and integration tests,4,hrs,150
