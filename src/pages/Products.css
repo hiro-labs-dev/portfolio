@@ -1,0 +1,160 @@
+.products {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.products-header {
+  padding: 80px 48px 40px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.products-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-header h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.products-header p {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.products-content {
+  padding: 80px 48px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 32px;
+}
+
+.product-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  border-color: var(--text-tertiary);
+  transform: translateY(-4px);
+}
+
+.product-card:hover h3 {
+  color: var(--accent-blue);
+}
+
+.product-image {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.coming-soon-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent-blue);
+  color: var(--bg-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.product-image img.product-logo {
+  width: auto;
+  height: 64px;
+  object-fit: contain;
+}
+
+.product-placeholder {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.product-info {
+  padding: 28px;
+}
+
+.product-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-tagline {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+}
+
+.product-info h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.product-pricing {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    padding: 60px 24px 30px;
+  }
+
+  .products-header h1 {
+    font-size: 36px;
+  }
+
+  .products-content {
+    padding: 60px 24px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

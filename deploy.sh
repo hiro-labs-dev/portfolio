@@ -9,7 +9,7 @@ echo "🔨 Building site..."
 npm run build
 
 echo "📦 Syncing to S3..."
-aws s3 sync dist/ s3://hiro-labs.com/ --delete --region us-east-1
+aws s3 sync dist/ s3://hiro-labs.dev/ --delete --region us-east-1
 
 echo "🔄 Invalidating CloudFront cache..."
 aws cloudfront create-invalidation --distribution-id E2RUGLH1BBXOG --paths "/*" --region us-east-1

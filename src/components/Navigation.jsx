@@ -36,6 +36,13 @@ function Navigation() {
             Projects
           </Link>
           <Link 
+            to="/products" 
+            className={`nav-link ${isActive('/products') ? 'active' : ''}`}
+            onClick={() => setIsOpen(false)}
+          >
+            Products
+          </Link>
+          <Link 
             to="/services" 
             className={`nav-link ${isActive('/services') ? 'active' : ''}`}
             onClick={() => setIsOpen(false)}
@@ -48,6 +55,13 @@ function Navigation() {
             onClick={() => setIsOpen(false)}
           >
             About
+          </Link>
+          <Link 
+            to="/resume" 
+            className={`nav-link ${isActive('/resume') ? 'active' : ''}`}
+            onClick={() => setIsOpen(false)}
+          >
+            Resume
           </Link>
           <Link 
             to="/contact" 

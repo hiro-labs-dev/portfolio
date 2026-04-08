@@ -5,10 +5,13 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import Resume from './pages/Resume'
 import NIRoadmap from './pages/NIRoadmap'
 import Invoice from './pages/Invoice'
 import InvoiceLookup from './pages/InvoiceLookup'
@@ -56,8 +59,11 @@ function AppLayout() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useEffect } from 'react'
+import { productsData } from '../data/products'
 import './Home.css'
 
 function Home() {
@@ -112,6 +113,31 @@ function Home() {
               description="Content-managed website for broadcasting network with program listings, broadcaster profiles, and event management."
               tech="Django, React, PostgreSQL"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="what-we-build">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Products</h2>
+            <Link to="/products" className="view-all">
+              View All <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="work-grid">
+            {productsData.slice(0, 3).map(product => (
+              <Link to={`/products/${product.id}`} key={product.id} className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="work-image">
+                  {product.image ? <img src={product.image} alt={product.name} /> : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48, fontWeight: 600, color: 'var(--text-tertiary)' }}>{product.name[0]}</div>}
+                </div>
+                <div className="work-info">
+                  <div className="work-category">{product.tagline}</div>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

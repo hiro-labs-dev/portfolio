@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { CheckCircle, CreditCard, ChevronDown, ChevronRight } from 'lucide-react'
 import { getInvoice, createCheckout } from '../api/invoices'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import './Invoice.css'
 
 function Invoice() {
@@ -12,6 +14,22 @@ function Invoice() {
   const [loading, setLoading] = useState(true)
   const [paying, setPaying] = useState(false)
   const [expanded, setExpanded] = useState({})
+  const wrapRef = useRef(null)
+
+  const handleDownloadPDF = async () => {
+    setExpanded(Object.fromEntries(invoice.items.map((_, i) => [i, true])))
+    await new Promise(r => setTimeout(r, 100))
+    const el = wrapRef.current
+    const canvas = await html2canvas(el, { backgroundColor: '#0d1117', scale: 1.5, useCORS: true })
+    const imgData = canvas.toDataURL('image/jpeg', 0.8)
+    const pxW = canvas.width
+    const pxH = canvas.height
+    const pdfW = 210
+    const pdfH = (pxH * pdfW) / pxW
+    const pdf = new jsPDF({ unit: 'mm', format: [pdfW, pdfH], compress: true })
+    pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH)
+    pdf.save(`invoice-${invoice.id}.pdf`)
+  }
 
   useEffect(() => {
     document.title = `Invoice ${id} - hiro labs`
@@ -39,7 +57,7 @@ function Invoice() {
 
   return (
     <div className="inv">
-      <div className="inv-wrap">
+      <div className="inv-wrap" ref={wrapRef}>
 
         {/* Header */}
         <div className="inv-header">
@@ -78,7 +96,7 @@ function Invoice() {
               <div className="inv-amount-label">{isPaid ? 'Paid' : 'Amount Due'}</div>
               <div className="inv-amount">${Number(invoice.subtotal).toFixed(2)}</div>
             </div>
-            <button onClick={() => window.print()} className="inv-pdf-btn">Save as PDF</button>
+            <button onClick={handleDownloadPDF} className="inv-pdf-btn">Save as PDF</button>
           </div>
         </div>
 
