@@ -116,8 +116,8 @@ function Home() {
           <div className="work-grid">
             {productsData.slice(0, 3).map(product => (
               <Link to={`/products/${product.id}`} key={product.id} className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="work-image" style={product.logo ? { display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0f1a' } : {}}>
-                  {product.logo ? <img src={product.logo} alt={product.name} style={{ width: '160px', height: '160px', objectFit: 'contain' }} /> : product.image ? <img src={product.image} alt={product.name} /> : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48, fontWeight: 600, color: 'var(--text-tertiary)' }}>{product.name[0]}</div>}
+                <div className={`work-image${product.logo ? ' product-logo-container' : ''}`}>
+                  {product.logo ? <img src={product.logo} alt={product.name} /> : product.image ? <img src={product.image} alt={product.name} /> : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48, fontWeight: 600, color: 'var(--text-tertiary)' }}>{product.name[0]}</div>}
                 </div>
                 <div className="work-info">
                   <div className="work-category">{product.tagline}</div>

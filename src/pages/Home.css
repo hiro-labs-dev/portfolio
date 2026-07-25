@@ -410,3 +410,17 @@
   line-height: 1.7;
   color: var(--text-secondary);
 }
+
+.work-image.product-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0f1a;
+}
+
+.work-image.product-logo-container img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  object-position: center;
+}
