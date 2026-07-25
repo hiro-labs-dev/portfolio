@@ -52,7 +52,7 @@ export async function generateTraditionalPDF() {
   doc.setFont('Inter', 'normal')
   doc.setFontSize(9)
   doc.setTextColor(...COLORS.muted)
-  doc.text('Zephyrhills, FL  |  roddydevelops@gmail.com  |  813-981-2002', PAGE_W / 2, y, { align: 'center' })
+  doc.text('Zephyrhills, FL  |  roddydevelops@gmail.com  |  813-981-2002  |  roddy-portfolio.vercel.app', PAGE_W / 2, y, { align: 'center' })
   y += 14
 
   y = drawLine(doc, y)
