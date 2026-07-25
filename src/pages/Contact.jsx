@@ -7,7 +7,7 @@ function Contact() {
   const [touched, setTouched] = useState({})
 
   useEffect(() => {
-    document.title = 'Contact - hiro labs'
+    document.title = 'Contact - Roddy Brown'
   }, [])
 
   const validateField = (name, value) => {
@@ -42,8 +42,8 @@ function Contact() {
     <div className="contact">
       <div className="contact-header">
         <div className="container">
-          <h1>Start a Conversation</h1>
-          <p>Let's discuss your infrastructure needs</p>
+          <h1>Get In Touch</h1>
+          <p>Let's discuss your project</p>
         </div>
       </div>
 
@@ -54,16 +54,16 @@ function Contact() {
               <h2>Let's build something great</h2>
               <p>
                 Whether you're a startup looking to ship your MVP fast or an established business 
-                needing a custom web application, we'd love to hear about your project.
+                needing a custom web application, I'd love to hear about your project.
               </p>
               <p>
-                Share your requirements and we'll schedule a time to discuss how hiro labs can help.
+                Share your requirements and I'll schedule a time to discuss how I can help.
               </p>
               
               <div className="contact-methods">
-                <a href="mailto:roddy@hiro-labs.dev" className="contact-method">
+                <a href="mailto:roddydevelops@gmail.com" className="contact-method">
                   <Mail size={24} />
-                  <span>roddy@hiro-labs.dev</span>
+                  <span>roddydevelops@gmail.com</span>
                 </a>
                 <a href="https://github.com/hiro-labs-dev" target="_blank" rel="noopener noreferrer" className="contact-method">
                   <Github size={24} />

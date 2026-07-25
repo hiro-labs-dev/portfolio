@@ -152,7 +152,7 @@ export const projectsData = {
 
 function Projects() {
   useEffect(() => {
-    document.title = 'Work - hiro labs'
+    document.title = 'Work - Roddy Brown'
   }, [])
 
   return (

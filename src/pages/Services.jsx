@@ -60,14 +60,14 @@ const colorOptions = [
 
 function Services() {
   useEffect(() => {
-    document.title = 'Services - hiro labs'
+    document.title = 'Services - Roddy Brown'
   }, [])
 
   return (
     <div className="services" style={{ '--service-accent': '#14b8a6' }}>
       <div className="services-header">
         <div className="container">
-          <h1>What We Build</h1>
+          <h1>What I Build</h1>
           <p>Infrastructure and systems designed for durability</p>
         </div>
       </div>

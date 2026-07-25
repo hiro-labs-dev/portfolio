@@ -13,7 +13,7 @@ function Navigation() {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <img src="/logo.svg" alt="hiro labs" />
+          Roddy Brown
         </Link>
         
         <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
@@ -41,13 +41,6 @@ function Navigation() {
             onClick={() => setIsOpen(false)}
           >
             Products
-          </Link>
-          <Link 
-            to="/services" 
-            className={`nav-link ${isActive('/services') ? 'active' : ''}`}
-            onClick={() => setIsOpen(false)}
-          >
-            Services
           </Link>
           <Link 
             to="/about" 

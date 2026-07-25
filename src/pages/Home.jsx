@@ -6,20 +6,20 @@ import './Home.css'
 
 function Home() {
   useEffect(() => {
-    document.title = 'hiro labs - Infrastructure for Modern Companies'
+    document.title = 'Roddy Brown - Full-Stack Software Engineer'
   }, [])
 
   return (
     <div className="home">
       <section className="hero">
         <div className="hero-container">
-          <div className="hero-label">hiro labs</div>
+          <div className="hero-label">Roddy Brown</div>
           <h1 className="hero-title">
-            We design the infrastructure<br />
+            I design the infrastructure<br />
             modern companies grow on.
           </h1>
           <p className="hero-subtitle">
-            We architect and deploy production-grade systems — from data infrastructure to full-stack 
+            I architect and deploy production-grade systems — from data infrastructure to full-stack 
             applications — built to perform under real-world load and scale without fragility.
           </p>
           <div className="hero-principles">
@@ -32,21 +32,9 @@ function Home() {
               view work
             </Link>
             <Link to="/contact" className="btn btn-secondary">
-              start a conversation
+              get in touch
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="why-hiro">
-        <div className="container">
-          <h2>Why hiro labs?</h2>
-          <p>
-            The name hiro (広) means "wide" or "expansive" in Japanese. It reflects our approach to building 
-            systems that are fast, comprehensive, and designed to scale with your needs. We believe technology 
-            today exists in a vast, interconnected ecosystem with the power to create real-world impact — and 
-            we build with that scope in mind.
-          </p>
         </div>
       </section>
 
@@ -57,7 +45,7 @@ function Home() {
             It isn't a performance problem — it's an architecture problem.
           </p>
           <p>
-            We design systems intentionally: starting with data models, defining API boundaries, 
+            I design systems intentionally: starting with data models, defining API boundaries, 
             planning deployment strategies, and building infrastructure that remains clear and 
             maintainable over time.
           </p>
@@ -68,7 +56,7 @@ function Home() {
         <div className="container">
           <div className="credibility-grid">
             <div className="credibility-item">
-              <span>10 production systems delivered</span>
+              <span>10+ production systems delivered</span>
             </div>
             <div className="credibility-item">
               <span>Nationwide data ingestion pipelines</span>
@@ -120,7 +108,7 @@ function Home() {
       <section className="what-we-build">
         <div className="container">
           <div className="section-header">
-            <h2>Our Products</h2>
+            <h2>My Products</h2>
             <Link to="/products" className="view-all">
               View All <ArrowRight size={18} />
             </Link>
@@ -144,7 +132,7 @@ function Home() {
 
       <section className="what-we-build">
         <div className="container">
-          <h2>What We Build</h2>
+          <h2>What I Build</h2>
           <div className="build-grid">
             <div className="build-item">
               <h3>Data Infrastructure</h3>
@@ -168,14 +156,14 @@ function Home() {
 
       <section className="founder">
         <div className="container">
-          <h2>Founder-led. Architecture-driven.</h2>
+          <h2>9+ years building production systems.</h2>
           <p>
-            Led by Roddy Brown, a senior software engineer with 8+ years building production systems 
-            for companies ranging from insurance to government agencies. Every project is approached 
+            From insurance companies to government agencies, I've built full-stack platforms, 
+            data pipelines, and cloud infrastructure at scale. Every project is approached 
             with architectural discipline and long-term maintainability in mind.
           </p>
           <Link to="/about" className="founder-link">
-            about the studio
+            more about me
           </Link>
         </div>
       </section>

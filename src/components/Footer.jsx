@@ -9,8 +9,8 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <h3>hiro labs</h3>
-            <p>We design the infrastructure modern companies grow on</p>
+            <h3>Roddy Brown</h3>
+            <p>I design the infrastructure modern companies grow on</p>
           </div>
 
           <div className="footer-links">
@@ -18,14 +18,14 @@ function Footer() {
               <h4>Navigation</h4>
               <a href="/">Home</a>
               <a href="/projects">Projects</a>
-              <a href="/services">Services</a>
+              <a href="/products">Products</a>
               <a href="/about">About</a>
               <a href="/contact">Contact</a>
             </div>
 
             <div className="footer-section">
               <h4>Connect</h4>
-              <a href="mailto:roddy@hiro-labs.dev">
+              <a href="mailto:roddydevelops@gmail.com">
                 <Mail size={16} />
                 Email
               </a>
@@ -42,7 +42,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} hiro labs. All rights reserved.</p>
+          <p>&copy; {currentYear} Roddy Brown. All rights reserved.</p>
           <p>Built with React + Vite</p>
         </div>
       </div>
