@@ -55,6 +55,11 @@ function Invoice() {
 
   const isPaid = invoice.status === 'paid' || searchParams.get('paid') === 'true'
 
+  const hasInstallments = invoice.items?.some(i => i.unit === 'installment')
+  const depositItem = hasInstallments ? invoice.items.find(i => i.description?.toLowerCase().includes('deposit') || i.description?.toLowerCase().includes('kickoff')) : null
+  const depositAmount = depositItem ? Number(depositItem.quantity) * Number(depositItem.rate) : null
+  const dueNow = depositAmount || Number(invoice.subtotal)
+
   return (
     <div className="inv">
       <div className="inv-wrap" ref={wrapRef}>
@@ -92,10 +97,24 @@ function Invoice() {
             <p>{invoice.dueDate}</p>
           </div>
           <div className="inv-meta-actions">
-            <div className={`inv-amount-box ${isPaid ? 'paid' : ''}`}>
-              <div className="inv-amount-label">{isPaid ? 'Paid' : 'Amount Due'}</div>
-              <div className="inv-amount">${Number(invoice.subtotal).toFixed(2)}</div>
-            </div>
+            {hasInstallments && !isPaid ? (
+              <>
+                <div className="inv-amount-box">
+                  <div className="inv-amount-label">Due Now — Deposit</div>
+                  <div className="inv-amount">${dueNow.toFixed(2)}</div>
+                </div>
+                <div className="inv-amount-box inv-amount-later">
+                  <div className="inv-amount-label">Due Upon Delivery</div>
+                  <div className="inv-amount">${(Number(invoice.subtotal) - dueNow).toFixed(2)}</div>
+                </div>
+                <div className="inv-project-total">Project Total: ${Number(invoice.subtotal).toFixed(2)}</div>
+              </>
+            ) : (
+              <div className={`inv-amount-box ${isPaid ? 'paid' : ''}`}>
+                <div className="inv-amount-label">{isPaid ? 'Paid' : 'Amount Due'}</div>
+                <div className="inv-amount">${Number(invoice.subtotal).toFixed(2)}</div>
+              </div>
+            )}
             <button onClick={handleDownloadPDF} className="inv-pdf-btn">Save as PDF</button>
           </div>
         </div>
@@ -110,7 +129,7 @@ function Invoice() {
             </>
           )}
 
-          {invoice.notes && <p className="inv-overview">{invoice.notes}</p>}
+          {invoice.notes && <div className="inv-notes">{invoice.notes}</div>}
 
           {/* Line items */}
           <h2 className="inv-section-title">Breakdown</h2>
@@ -181,7 +200,7 @@ function Invoice() {
           ) : (
             <button onClick={handlePay} disabled={paying} className="inv-pay-btn">
               <CreditCard size={20} />
-              {paying ? 'Redirecting to payment...' : `Pay Now — $${Number(invoice.subtotal).toFixed(2)}`}
+              {paying ? 'Redirecting to payment...' : hasInstallments ? `Pay Deposit — $${dueNow.toFixed(2)}` : `Pay Now — $${Number(invoice.subtotal).toFixed(2)}`}
             </button>
           )}
 

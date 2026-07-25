@@ -16,6 +16,10 @@ import NIRoadmap from './pages/NIRoadmap'
 import Invoice from './pages/Invoice'
 import InvoiceLookup from './pages/InvoiceLookup'
 import InvoiceAdmin from './pages/InvoiceAdmin'
+import ClientQuestionnaire from './pages/ClientQuestionnaire'
+import QuestionnaireSubmissions from './pages/QuestionnaireSubmissions'
+import ServiceAgreement from './pages/ServiceAgreement'
+import ITSDemo from './pages/ITSDemo'
 import './App.css'
 
 function ScrollToTop() {
@@ -30,10 +34,18 @@ function ScrollToTop() {
 
 function AppLayout() {
   const { pathname } = useLocation()
-  const isStandalone = pathname === '/ni-roadmap' || pathname.startsWith('/invoice/') || pathname === '/pay' || pathname === '/admin/invoices'
+  const isStandalone = pathname === '/ni-roadmap' || pathname.startsWith('/invoice/') || pathname === '/pay' || pathname === '/admin/invoices' || pathname === '/questionnaire' || pathname === '/admin/questionnaire' || pathname.startsWith('/agreements/') || pathname === '/its-demo'
 
   if (isStandalone && pathname === '/ni-roadmap') {
     return <NIRoadmap />
+  }
+
+  if (isStandalone && pathname === '/its-demo') {
+    return <ITSDemo />
+  }
+
+  if (isStandalone && pathname === '/questionnaire') {
+    return <ClientQuestionnaire />
   }
 
   if (isStandalone) {
@@ -45,6 +57,8 @@ function AppLayout() {
             <Route path="/invoice/:id" element={<Invoice />} />
             <Route path="/pay" element={<InvoiceLookup />} />
             <Route path="/admin/invoices" element={<InvoiceAdmin />} />
+            <Route path="/admin/questionnaire" element={<QuestionnaireSubmissions />} />
+            <Route path="/agreements/nexus-rv" element={<ServiceAgreement />} />
           </Routes>
         </main>
       </>

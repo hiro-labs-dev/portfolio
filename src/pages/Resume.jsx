@@ -6,6 +6,24 @@ import './Resume.css'
 
 const projects = [
   {
+    name: 'Signal',
+    url: 'https://hiro-labs.dev/products/signal',
+    tagline: 'AI-Powered Traffic Management Platform',
+    description: 'Next-generation ATMS replacing legacy highway management software. AI-native operations, live government data integrations, and a map-centric workspace built for 24/7 traffic management centers.',
+    preview: '/signal-screenshots/traffic.webp',
+    logo: '/products/signal-logo.svg',
+    logoBg: '#0a0f1a',
+    tech: ['React', 'TypeScript', 'Mapbox GL', 'ArcGIS REST', 'NWS API', 'FL 511 API', 'WebSocket', 'Computer Vision', 'ML Predictions', 'Python', 'Node.js', 'AWS'],
+    bullets: [
+      'Architected an AI-native Advanced Traffic Management System targeting state DOTs, featuring a real-time map workspace with traffic flow, incidents, cameras, devices, and Road Ranger dispatch.',
+      'Integrated live government data sources: NWS weather alerts, FL 511 incidents, and FDOT ArcGIS services for crash history, speed limits, traffic volumes, and bridge inventory.',
+      'Built predictive incident detection using ML-scored risk models based on speed variance, weather conditions, volume patterns, and historical crash data.',
+      'Developed Camera Vision AI for automated detection of wrong-way drivers, stopped vehicles, debris, smoke, and queue formation on existing CCTV infrastructure.',
+      'Implemented a queue detection engine computing speeds across 73 detector stations every 15 seconds with auto-posted DMS warnings.',
+      'Built FHWA compliance reporting: Travel Time Reliability, Freight Reliability, and Peak Hour Excessive Delay computed live with PDF export.',
+    ],
+  },
+  {
     name: 'Kite',
     url: 'https://kite.hiro-labs.dev',
     tagline: 'RV Inspection SaaS',
@@ -19,7 +37,6 @@ const projects = [
       'Built an offline-first data layer using Dexie (IndexedDB) with a sync queue that processes changes when connectivity returns. Critical for inspectors working without cell signal.',
       'Deployed the API as AWS Lambda via SAM with 12 DynamoDB tables, JWT auth, and presigned S3 uploads for media.',
       'Integrated Stripe Connect for inspector onboarding and Stripe Checkout for client payment on published reports.',
-      'Built AI-assisted inspection features with route handlers for damage assessment analysis.',
     ],
   },
   {
@@ -51,6 +68,21 @@ const projects = [
       'Developed a React/TypeScript dashboard with enforced role separation at the routing level. Creators and businesses have entirely separate dashboard trees.',
       'Integrated Mapbox GL for interactive maps, S3 presigned URL uploads, HubSpot CRM, and Postmark transactional email.',
       'Deployed via Docker to EC2 (staging + production) with shared RDS PostgreSQL and Redis, plus GitHub Actions CI/CD.',
+    ],
+  },
+  {
+    name: 'Common Ground Tampa',
+    url: null,
+    tagline: 'Bilingual Community Activism Platform',
+    label: 'Client',
+    description: 'Bilingual community platform connecting residents with local organizations, events, and activism resources across Tampa.',
+    preview: '/projects/common-ground.webp',
+    modalImage: '/projects/common-ground.webp',
+    tech: ['Django', 'Wagtail CMS', 'React', 'PostgreSQL', 'Mapbox', 'i18next', 'AWS', 'GitHub Actions'],
+    bullets: [
+      'Built a full-stack platform with Wagtail CMS for content management, interactive Mapbox resource maps, event calendar, and organization directory.',
+      'Implemented bilingual support (English/Spanish) with i18next and locale-aware content delivery.',
+      'Automated CI/CD via GitHub Actions with AWS OIDC for zero-credential deployments to S3/CloudFront and EC2.',
     ],
   },
   {
@@ -101,21 +133,6 @@ const projects = [
       'Developed a Python sidecar for RVC voice conversion via ONNX Runtime, managed as a Tauri subprocess over TCP.',
     ],
   },
-  {
-    name: 'Offering',
-    url: 'https://offering.hiro-labs.dev',
-    tagline: 'AI Prompt Optimization Tool',
-    description: 'Web app that rewrites user prompts following prompt-engineering best practices.',
-    preview: 'offering',
-    logo: '/products/offering-logo.svg',
-    logoBg: '#0a0a0a',
-    modalImage: '/projects/offering-preview.webp',
-    tech: ['React 19', 'Node.js', 'AWS Lambda', 'DynamoDB', 'SSM', 'SAM'],
-    bullets: [
-      'Built a React 19 frontend with custom CSS and a Node.js Lambda backend deployed via SAM.',
-      'Backend fetches service tokens from SSM, calls the Sakura AI API with a meta-prompt, stores history to DynamoDB, and returns optimized prompts with change analysis.',
-    ],
-  },
 ]
 
 const priorRoles = [
@@ -125,23 +142,21 @@ const priorRoles = [
     location: 'Remote',
     period: 'Jun 2022 – Jul 2024',
     bullets: [
-      'Designed and implemented ETL pipelines for MLS data ingestion across all U.S. states, processing three years of historical MLS listings and two years of public record data nationwide.',
-      'Built RESTful APIs with Django REST Framework powering frontend search, filtering, and lead management features.',
-      'Integrated Elasticsearch and ClickHouse to enable real-time property search and analytics across large datasets.',
+      'Designed ETL pipelines for MLS data ingestion across all U.S. states, processing three years of historical listings and two years of public record data nationwide.',
+      'Built RESTful APIs with Django REST Framework powering property search, filtering, and lead management for thousands of real estate agents.',
+      'Integrated Elasticsearch and ClickHouse for real-time property search and analytics across datasets exceeding 100M records.',
       'Managed AWS infrastructure (EC2, RDS, S3, CloudWatch) supporting high-availability production deployments.',
-      'Developed responsive React UIs for both internal tools and client-facing real estate applications.',
       'Implemented CI/CD pipelines with GitHub Actions, reducing deployment cycle times and eliminating manual release steps.',
     ],
   },
   {
     role: 'Software Engineer II',
     company: 'AspirEDU LLC',
-    location: 'Tampa, FL',
+    location: 'Tampa, FL (Concurrent)',
     period: 'Jan 2022 – Sept 2022',
     bullets: [
       'Optimized PostgreSQL queries and indexing strategies, reducing backend response times on key reporting endpoints.',
-      'Built React features for data reporting dashboards and improved user navigation flows.',
-      'Created exportable reporting endpoints supporting CSV, PDF, and JSON formats with reusable UI components.',
+      'Built React reporting dashboards with exportable endpoints supporting CSV, PDF, and JSON formats.',
       'Refactored legacy Django and React codebases to modern patterns, improving maintainability and developer velocity.',
     ],
   },
@@ -151,10 +166,10 @@ const priorRoles = [
     location: 'Tampa, FL',
     period: 'Jan 2021 – Jan 2022',
     bullets: [
-      'Designed and built a Django/React help desk ticketing platform for the Florida Department of Transportation.',
-      'Automated backend diagnostics and real-time issue tracking, reducing manual triage time for field operations.',
-      'Developed secure REST APIs and integrated frontend interfaces supporting statewide field operations teams.',
+      'Designed and built a Django/React help desk ticketing platform for the Florida Department of Transportation, supporting statewide ITS field operations.',
+      'Orchestrated ETL processes for ITS data synchronization across multiple FDOT data sources.',
       'Led a team of developers through the full SDLC: requirements gathering, architecture, implementation, and deployment.',
+      'Developed secure REST APIs integrated with frontend interfaces for real-time issue tracking and field operations dispatch.',
     ],
   },
   {
@@ -163,11 +178,11 @@ const priorRoles = [
     location: 'Tampa, FL',
     period: 'Jun 2017 – Jan 2021',
     bullets: [
-      'Built web applications with Django and React that streamlined claims processing workflows and improved adjuster productivity.',
+      'Built Django/React web applications that streamlined claims processing workflows and improved adjuster productivity.',
       'Developed predictive analytics tools with dynamic visualizations using Python statistical models.',
-      'Led migration of legacy monolithic systems to single-page applications with modular Django backend services, containerized with Docker.',
+      'Led migration of legacy monolithic systems to SPAs with modular Django backend services, containerized with Docker.',
       'Integrated CI/CD pipelines and CloudWatch monitoring, maintaining high service availability across production environments.',
-      'Conducted code reviews and mentored junior developers on Django, React, and testing best practices.',
+      'Mentored junior developers on Django, React, testing best practices, and code review standards.',
     ],
   },
 ]
@@ -195,6 +210,7 @@ const skills = [
       { name: 'Tailwind CSS', level: 'primary' },
       { name: 'Redux Toolkit', level: 'primary' },
       { name: 'React Router', level: 'primary' },
+      { name: 'Mapbox GL', level: 'primary' },
       { name: 'Electron', level: 'secondary' },
       { name: 'Tauri', level: 'secondary' },
     ],
@@ -208,6 +224,7 @@ const skills = [
       { name: 'Redis', level: 'secondary' },
       { name: 'Celery', level: 'secondary' },
       { name: 'Elasticsearch', level: 'secondary' },
+      { name: 'ClickHouse', level: 'secondary' },
     ],
   },
   {
@@ -229,21 +246,22 @@ const skills = [
     items: [
       { name: 'Stripe', level: 'primary' },
       { name: 'OpenAI / Anthropic', level: 'primary' },
-      { name: 'Mapbox GL', level: 'secondary' },
+      { name: 'ArcGIS REST Services', level: 'secondary' },
+      { name: 'NWS / FL 511 APIs', level: 'secondary' },
       { name: 'Postmark / Resend', level: 'secondary' },
       { name: 'HubSpot', level: 'secondary' },
-      { name: 'OBS WebSocket', level: 'secondary' },
     ],
   },
   {
     label: 'Specialties',
     items: [
+      { name: 'ITS / ATMS Systems', level: 'primary' },
+      { name: 'Real-time Geospatial', level: 'primary' },
       { name: 'WebSockets / Real-time', level: 'primary' },
-      { name: 'Offline-first (Dexie)', level: 'primary' },
-      { name: 'CI/CD Pipelines', level: 'primary' },
-      { name: 'PDF Generation', level: 'secondary' },
+      { name: 'ML / Predictive Models', level: 'secondary' },
+      { name: 'Computer Vision', level: 'secondary' },
+      { name: 'Offline-first (Dexie)', level: 'secondary' },
       { name: 'Audio DSP', level: 'secondary' },
-      { name: 'MCP', level: 'secondary' },
     ],
   },
 ]
@@ -377,7 +395,7 @@ function Resume() {
               </div>
             </div>
             <p className="hiro-description">
-              Building and shipping multiple SaaS products and client platforms solo. I own every layer: UI/UX design, frontend, backend, infrastructure, DevOps, and third-party integrations.
+              Building and shipping SaaS products, enterprise platforms, and client systems solo. I own every layer: UI/UX design, frontend, backend, infrastructure, DevOps, AI/ML integrations, and government data systems.
             </p>
             <div className="project-grid">
               {projects.map(project => (

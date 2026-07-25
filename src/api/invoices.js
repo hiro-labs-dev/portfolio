@@ -1,4 +1,4 @@
-const API_BASE = 'https://4b1h2lstyf.execute-api.us-east-1.amazonaws.com'
+const API_BASE = '/api'
 
 export async function getInvoice(id) {
   const res = await fetch(`${API_BASE}/invoices/${id}`)

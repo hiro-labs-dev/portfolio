@@ -1,0 +1,192 @@
+.qs-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.qs-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.qs-login h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.qs-login form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.qs-login input {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-family: var(--font-sans);
+}
+
+.qs-login input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.qs-login button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.qs-error {
+  color: var(--accent-red);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.qs-header {
+  padding: 80px 24px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.qs-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.qs-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.qs-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qs-empty {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 40px;
+}
+
+.qs-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.qs-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+}
+
+.qs-card-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.qs-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.qs-status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  vertical-align: middle;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qs-complete {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-green);
+}
+
+.qs-draft {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-yellow);
+}
+
+.qs-card-body {
+  padding: 0 20px 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.qs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.qs-field-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qs-field-value {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .qs-header {
+    padding: 60px 16px 24px;
+  }
+
+  .qs-list {
+    padding: 0 16px 40px;
+  }
+
+  .qs-card-header {
+    padding: 14px 16px;
+  }
+
+  .qs-card-body {
+    padding: 0 16px 16px;
+  }
+}

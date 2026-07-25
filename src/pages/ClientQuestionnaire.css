@@ -1,0 +1,184 @@
+.questionnaire {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Top bar */
+.q-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.q-home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.q-home-link:hover { opacity: 0.7; }
+
+.q-logo {
+  height: 32px;
+  width: auto;
+}
+
+.q-topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.q-topbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.q-topbar-btn:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+.q-save-btn { border-color: var(--accent-blue); color: var(--accent-blue); }
+.q-save-btn:hover { background: var(--accent-blue); color: white; }
+
+/* Header */
+.questionnaire-header {
+  padding: 40px 48px 32px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.questionnaire-header .container,
+.questionnaire-content .container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.questionnaire-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+.questionnaire-header p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+
+.progress-bar { width: 100%; height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent-blue); border-radius: 3px; transition: width 0.3s ease; }
+.step-label { display: block; margin-top: 10px; font-size: 13px; color: var(--text-secondary); }
+
+/* Content */
+.questionnaire-content { padding: 40px 48px 80px; }
+.questionnaire-content h2 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.step-description { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; }
+
+.questionnaire-content .form-group { margin-bottom: 24px; }
+.questionnaire-content .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 4px; color: var(--text-primary); }
+.field-note { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5; }
+
+.questionnaire-content .form-group input,
+.questionnaire-content .form-group textarea {
+  width: 100%; padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border-color);
+  border-radius: 8px; color: var(--text-primary); font-size: 15px; font-family: var(--font-sans); transition: border-color 0.2s;
+}
+.questionnaire-content .form-group input:focus,
+.questionnaire-content .form-group textarea:focus { outline: none; border-color: var(--accent-blue); }
+.questionnaire-content .form-group textarea { resize: vertical; min-height: 80px; }
+
+/* Pills */
+.pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  padding: 10px 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 100px;
+  color: var(--text-secondary); font-size: 14px; font-family: var(--font-sans); cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.pill:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+.pill-active { background: var(--accent-blue); border-color: var(--accent-blue); color: white; }
+.pill-active:hover { border-color: var(--accent-blue); color: white; filter: brightness(1.1); }
+
+/* Nav */
+.form-nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 32px; gap: 16px; }
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border: none; border-radius: 8px;
+  font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: var(--font-sans);
+}
+.back-btn { background: var(--bg-tertiary); color: var(--text-primary); }
+.back-btn:hover { background: var(--border-color); }
+.next-btn { background: var(--accent-blue); color: white; margin-left: auto; }
+.next-btn:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+.next-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.submit-error { width: 100%; text-align: center; color: var(--accent-red); font-size: 14px; margin-bottom: 12px; }
+.submit-btn-full {
+  width: 100%; justify-content: center; padding: 16px 24px; background: var(--accent-green); color: white;
+  font-size: 16px; font-weight: 600; border-radius: 10px;
+}
+.submit-btn-full:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+.submit-btn-full:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* AI */
+.ai-suggest-btn {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 14px 20px; margin-bottom: 28px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid #7c3aed; border-radius: 10px;
+  color: #c4b5fd; font-size: 14px; font-weight: 500; font-family: var(--font-sans); cursor: pointer; transition: all 0.2s;
+}
+.ai-suggest-btn:hover:not(:disabled) { border-color: #a78bfa; color: #e9d5ff; background: linear-gradient(135deg, #1e1e36, #1a2744); }
+.ai-suggest-btn:disabled { opacity: 0.7; cursor: wait; }
+.ai-applied-note {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px; margin-bottom: 24px;
+  background: rgba(124, 58, 237, 0.1); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 8px; color: #c4b5fd; font-size: 13px;
+}
+
+/* Modal */
+.q-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center;
+  z-index: 100; padding: 24px;
+}
+.q-modal {
+  background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px;
+  padding: 28px; width: 100%; max-width: 420px;
+}
+.q-modal h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.q-modal p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+.q-modal input {
+  width: 100%; padding: 12px 16px; background: var(--bg-tertiary); border: 1px solid var(--border-color);
+  border-radius: 8px; color: var(--text-primary); font-size: 15px; font-family: var(--font-sans); margin-bottom: 12px;
+}
+.q-modal input:focus { outline: none; border-color: var(--accent-blue); }
+.q-modal-btn {
+  width: 100%; padding: 12px; background: var(--accent-blue); color: white; border: none; border-radius: 8px;
+  font-size: 15px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); transition: all 0.2s;
+}
+.q-modal-btn:hover:not(:disabled) { filter: brightness(1.1); }
+.q-modal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.q-modal-error { color: var(--accent-red); font-size: 13px; margin-bottom: 12px; }
+.q-modal-success { text-align: center; color: var(--accent-green); }
+.q-modal-success h3 { color: var(--text-primary); margin-top: 12px; }
+.q-id-display {
+  display: block; padding: 12px; background: var(--bg-tertiary); border-radius: 8px; font-size: 13px;
+  color: var(--accent-blue); word-break: break-all; margin: 12px 0; user-select: all;
+}
+.q-modal-hint { font-size: 12px; color: var(--text-secondary); }
+
+/* Success */
+.questionnaire-success {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 52px);
+  text-align: center; padding: 48px; color: var(--accent-green);
+}
+.questionnaire-success h1 { font-size: 36px; color: var(--text-primary); margin-top: 24px; margin-bottom: 16px; }
+.questionnaire-success p { font-size: 16px; color: var(--text-secondary); max-width: 480px; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .questionnaire-header { padding: 24px 20px; }
+  .questionnaire-header h1 { font-size: 28px; }
+  .questionnaire-content { padding: 28px 20px 60px; }
+  .pill { font-size: 13px; padding: 8px 14px; }
+  .q-topbar-btn span { display: none; }
+}

@@ -1,10 +1,52 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { productsData } from '../data/products'
 import SakuraTerminal from '../components/SakuraTerminal'
 import KiteDashboard from '../components/KiteDashboard'
 import './ProductDetail.css'
+
+function ProductScreenshots({ screenshots }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
+  const goNext = () => setCurrentIndex((i) => (i + 1) % screenshots.length)
+  const goPrev = () => setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length)
+
+  return (
+    <>
+      <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', border: '1px solid #1e2d3d' }}>
+        <div onClick={() => setLightboxOpen(true)} style={{ cursor: 'pointer', position: 'relative' }}>
+          <img src={screenshots[currentIndex].src} alt={screenshots[currentIndex].label} style={{ width: '100%', display: 'block', borderRadius: '12px' }} />
+          <button style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.7)', border: '1px solid #1e2d3d', borderRadius: '8px', padding: '8px 12px', color: '#14b8a6', fontSize: '0.8rem', cursor: 'pointer', backdropFilter: 'blur(4px)' }}>
+            ⛶ Fullscreen
+          </button>
+        </div>
+        <button onClick={(e) => { e.stopPropagation(); goPrev(); }} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.7)', border: '1px solid #1e2d3d', borderRadius: '50%', width: '40px', height: '40px', color: '#e8edf3', fontSize: '1.2rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
+        <button onClick={(e) => { e.stopPropagation(); goNext(); }} style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.7)', border: '1px solid #1e2d3d', borderRadius: '50%', width: '40px', height: '40px', color: '#e8edf3', fontSize: '1.2rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
+        <div style={{ position: 'absolute', bottom: '12px', left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)', borderRadius: '8px', padding: '6px 16px', color: '#e8edf3', fontSize: '0.85rem', fontWeight: '500' }}>
+          {screenshots[currentIndex].label} — {currentIndex + 1}/{screenshots.length}
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: '8px', marginTop: '12px', overflowX: 'auto', paddingBottom: '8px' }}>
+        {screenshots.map((shot, i) => (
+          <img key={shot.src} src={shot.src} alt={shot.label} onClick={() => setCurrentIndex(i)} style={{ width: '80px', height: '50px', objectFit: 'cover', borderRadius: '6px', cursor: 'pointer', border: i === currentIndex ? '2px solid #14b8a6' : '2px solid transparent', opacity: i === currentIndex ? 1 : 0.6, transition: 'all 0.2s', flexShrink: 0 }} />
+        ))}
+      </div>
+      {lightboxOpen && (
+        <div onClick={() => setLightboxOpen(false)} style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+          <img src={screenshots[currentIndex].src} alt={screenshots[currentIndex].label} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '8px' }} onClick={(e) => e.stopPropagation()} />
+          <button onClick={() => setLightboxOpen(false)} style={{ position: 'absolute', top: '20px', right: '20px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', width: '44px', height: '44px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
+          <button onClick={(e) => { e.stopPropagation(); goPrev(); }} style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
+          <button onClick={(e) => { e.stopPropagation(); goNext(); }} style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
+          <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.7)', borderRadius: '8px', padding: '8px 20px', color: '#e8edf3', fontSize: '0.9rem' }}>
+            {screenshots[currentIndex].label} — {currentIndex + 1}/{screenshots.length}
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 function ProductDetail() {
   const { id } = useParams()
@@ -48,6 +90,14 @@ function ProductDetail() {
             ) : product.demo === 'kite-dashboard' ? (
               <KiteDashboard />
             ) : null}
+          </div>
+        </div>
+      )}
+
+      {product.screenshots && product.screenshots.length > 0 && (
+        <div className="product-detail-image">
+          <div className="container">
+            <ProductScreenshots screenshots={product.screenshots} />
           </div>
         </div>
       )}
