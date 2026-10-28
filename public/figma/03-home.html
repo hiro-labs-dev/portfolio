@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .container { max-width: 1200px; margin: 0 auto; }
+  /* Nav */
+  .navigation { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); }
+  .nav-container { max-width: 1296px; margin: 0 auto; padding: 0 48px; height: 80px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-size: 16px; font-weight: 500; }
+  .nav-links { display: flex; gap: 40px; }
+  .nav-link.is-active::after { bottom: -32px; }
+  .nav-toggle { display: none; }
+  /* Hero */
+  .hero { position: relative; padding: 80px 48px 100px; border-bottom: 1px solid var(--border-color);
+          background: radial-gradient(circle at 20% 50%, rgba(20,184,166,.08) 0%, transparent 50%), var(--bg-primary); }
+  .hero .t-overline { margin-bottom: 24px; }
+  .hero h1 { max-width: 900px; margin-bottom: 28px; }
+  .hero .t-lead { max-width: 700px; margin-bottom: 32px; }
+  .hero-actions { display: flex; gap: 16px; }
+  /* Sections */
+  .section { padding: 120px 48px; }
+  .on-primary-bg { background: var(--bg-primary); }
+  .on-secondary-bg { background: var(--bg-secondary); }
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; }
+  .section-intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; margin-bottom: 56px; }
+  .section-intro .t-eyebrow { display: block; margin-bottom: 14px; }
+  .section-intro > p { max-width: 410px; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cta h2 { max-width: 700px; margin-bottom: 24px; }
+  .cta p { max-width: 700px; margin-bottom: 32px; line-height: 1.8; }
+  /* Footer */
+  .footer { border-top: 1px solid var(--border-color); background: var(--bg-primary); }
+  .footer-container { max-width: 1296px; margin: 0 auto; padding: 80px 48px 40px; }
+  .footer-content { display: grid; grid-template-columns: 1.5fr 2.5fr; gap: 80px; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border-color); }
+  .footer-brand h3 { margin-bottom: 16px; }
+  .footer-brand p { max-width: 280px; }
+  .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .footer-section .t-footer-heading { margin-bottom: 20px; }
+  .footer-bottom { display: flex; justify-content: space-between; }
+
+  @media (max-width: 768px) {
+    .nav-container { padding: 0 24px; height: 72px; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .hero { padding: 56px 24px 72px; }
+    .hero h1 { font-size: 40px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn { justify-content: center; }
+    .section { padding: 80px 24px; }
+    .section-intro { display: block; margin-bottom: 36px; }
+    .section-intro > p { margin-top: 18px; }
+    .t-h2 { font-size: 32px; }
+    .work-grid { grid-template-columns: 1fr; gap: 16px; }
+    .card-grid { grid-template-columns: 1fr; gap: 12px; }
+    .feature-card { min-height: 0; }
+    .footer-container { padding: 60px 24px 32px; }
+    .footer-content { grid-template-columns: 1fr; gap: 48px; margin-bottom: 48px; padding-bottom: 48px; }
+    .footer-links { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style></head>
+<body>
+<nav class="navigation" id="Navigation">
+  <div class="nav-container">
+    <a class="nav-logo">Hiro Labs</a>
+    <div class="nav-links">
+      <a class="nav-link is-active">Home</a><a class="nav-link">Work</a><a class="nav-link">In the Lab</a>
+      <a class="nav-link">Services</a><a class="nav-link">About</a><a class="nav-link">Contact</a>
+    </div>
+    <svg class="nav-toggle" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e6edf3" stroke-width="2" stroke-linecap="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+  </div>
+</nav>
+
+<section class="hero" id="Hero">
+  <div class="container">
+    <div class="t-overline">Hiro Labs</div>
+    <h1 class="t-display">Practical digital products, websites, and software built for how your business actually works.</h1>
+    <p class="t-lead">We help you plan, design, and ship the right thing next—whether that's a clearer website, a custom web app, or the systems behind it.</p>
+    <div class="hero-actions"><a class="btn btn-primary">view work</a><a class="btn btn-secondary">start a project</a></div>
+  </div>
+</section>
+
+<section class="section on-secondary-bg" id="Selected-Work">
+  <div class="container">
+    <div class="section-header"><h2 class="t-h2">Selected Work</h2>
+      <a class="text-link">View All <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+    <div class="work-grid">
+      <a class="work-card"><div class="work-category">Community platform</div><h3>Common Ground Tampa</h3><p>Bilingual community platform with resource maps, events, and local organization directories.</p></a>
+      <a class="work-card"><div class="work-category">Creator-business platform</div><h3>Nomadic Influence</h3><p>SaaS platform for creator profiles, opportunity management, subscriptions, and business workflows.</p></a>
+      <a class="work-card"><div class="work-category">Corporate website with CMS</div><h3>Nexus RV</h3><p>Motorhome catalog, interactive floor plans, dealer locator, and content management for an RV manufacturer.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section on-primary-bg" id="Capabilities">
+  <div class="container">
+    <div class="section-intro"><div><span class="t-eyebrow">What we can help with</span><h2 class="t-h2">Capabilities</h2></div>
+      <p class="t-body">From the public-facing site to the systems behind it, we build the pieces that make a business easier to understand and run.</p></div>
+    <div class="card-grid">
+      <article class="feature-card on-primary"><span class="card-number">01</span><svg class="card-mark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Websites that pull their weight</h3><p>Clear, polished sites that help the right people understand what you do and take the next step.</p></article>
+      <article class="feature-card on-primary"><span class="card-number">02</span><svg class="card-mark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Custom web applications</h3><p>Useful tools, portals, and platforms shaped around the way your team and customers actually work.</p></article>
+      <article class="feature-card on-primary"><span class="card-number">03</span><svg class="card-mark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Connected systems</h3><p>Data pipelines and integrations that reduce manual work and keep important information moving.</p></article>
+      <article class="feature-card on-primary"><span class="card-number">04</span><svg class="card-mark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Reliable delivery</h3><p>Cloud infrastructure and automation that make your product easier to ship, run, and improve.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section on-secondary-bg" id="How-We-Work">
+  <div class="container">
+    <div class="section-intro"><div><span class="t-eyebrow">A practical partnership</span><h2 class="t-h2">How we work</h2></div>
+      <p class="t-body">A clear, collaborative process that keeps decisions grounded and momentum high.</p></div>
+    <ol class="card-grid">
+      <li class="feature-card on-secondary no-mark"><span class="card-number">01</span><h3>Get clear</h3><p>We start with the problem, the people involved, and what a useful outcome actually looks like.</p></li>
+      <li class="feature-card on-secondary no-mark"><span class="card-number">02</span><h3>Make the right plan</h3><p>We focus the scope and design a solution that fits the job—without adding ceremony for its own sake.</p></li>
+      <li class="feature-card on-secondary no-mark"><span class="card-number">03</span><h3>Build in the open</h3><p>You see real progress early and often, so feedback shapes the work while it can still matter.</p></li>
+      <li class="feature-card on-secondary no-mark"><span class="card-number">04</span><h3>Set it up to last</h3><p>We ship with the practical details handled, so your team can use, manage, and build on it confidently.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section on-secondary-bg cta" id="CTA" style="border-top:1px solid var(--border-color)">
+  <div class="container">
+    <h2 class="t-h2">Need a partner for the next build?</h2>
+    <p class="t-body">Whether you need a website, a web app, or a better way to run part of your business, we will help you find a practical place to start.</p>
+    <a class="underline-link">contact Hiro Labs</a>
+  </div>
+</section>
+
+<footer class="footer" id="Footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand"><h3 class="t-h4">Hiro Labs</h3><p class="t-small">Founder-led software studio for customer-facing systems and automation</p></div>
+      <div class="footer-links">
+        <div class="footer-section"><div class="t-footer-heading">Navigation</div>
+          <a class="footer-link">Home</a><a class="footer-link">Work</a><a class="footer-link">In the Lab</a><a class="footer-link">Services</a><a class="footer-link">About</a><a class="footer-link">Contact</a></div>
+        <div class="footer-section"><div class="t-footer-heading">Connect</div>
+          <a class="footer-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>Email</a>
+          <a class="footer-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a>
+          <a class="footer-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p class="t-caption">© 2026 Hiro Labs. All rights reserved.</p><p class="t-caption">Built with React + Vite</p></div>
+  </div>
+</footer>
+</body></html>

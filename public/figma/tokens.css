@@ -1,0 +1,87 @@
+/* Hiro Labs design tokens — extracted from hiro-labs.dev (index-AIyCRAnW.css) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* Color / Background */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  /* Color / Border */
+  --border-color: #30363d;
+  /* Color / Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
+  --text-tertiary: #484f58;
+  /* Color / Accent */
+  --accent: #14b8a6;
+  --accent-hover: #0f9f90;
+  --accent-light: #5eead4;
+  --accent-green: #10b981;
+  --accent-yellow: #f59e0b;
+  --accent-red: #ef4444;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", "Roboto Mono", Monaco, Consolas, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+ol, ul { list-style: none; }
+
+/* ---------- Type styles ---------- */
+.t-display  { font-size: 64px; font-weight: 600; line-height: 1.15; letter-spacing: -0.03em; }
+.t-h2       { font-size: 42px; font-weight: 600; line-height: 1.2;  letter-spacing: -0.02em; }
+.t-h3       { font-size: 20px; font-weight: 600; line-height: 1.3;  letter-spacing: -0.01em; }
+.t-h4       { font-size: 18px; font-weight: 600; line-height: 1.3;  letter-spacing: -0.01em; }
+.t-lead     { font-size: 18px; font-weight: 400; line-height: 1.7;  color: var(--text-secondary); }
+.t-body     { font-size: 16px; font-weight: 400; line-height: 1.7;  color: var(--text-secondary); }
+.t-small    { font-size: 14px; font-weight: 400; line-height: 1.7;  color: var(--text-secondary); }
+.t-label    { font-size: 14px; font-weight: 500; letter-spacing: 0.3px; }
+.t-caption  { font-size: 13px; font-weight: 400; letter-spacing: 0.3px; color: var(--text-tertiary); }
+.t-overline { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.t-eyebrow  { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.t-footer-heading { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-tertiary); }
+
+/* ---------- Components ---------- */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 6px;
+       font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn-primary   { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+.btn-primary.is-hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-secondary { background: transparent; color: var(--text-secondary); border-color: var(--border-color); }
+.btn-secondary.is-hover { color: var(--text-primary); border-color: var(--text-primary); }
+
+.text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-size: 14px; font-weight: 500; }
+.text-link.is-hover { color: var(--accent-light); gap: 12px; }
+.underline-link { display: inline-block; color: var(--accent); font-size: 14px; font-weight: 600;
+                  border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.underline-link.is-hover { color: var(--accent-light); border-color: var(--accent-light); }
+
+.nav-link { color: var(--text-secondary); font-size: 14px; font-weight: 500; letter-spacing: 0.3px; position: relative; }
+.nav-link.is-active { color: var(--text-primary); }
+.nav-link.is-active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -31px; height: 1px; background: var(--accent); }
+
+.work-card { display: block; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; }
+.work-card .work-category { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 1px;
+                            text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.work-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.01em; }
+.work-card p  { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
+.work-card.is-hover { border-color: var(--accent); }
+.work-card.is-hover h3 { color: var(--accent); }
+
+.feature-card { position: relative; min-height: 260px; padding: 28px 24px 24px; border: 1px solid var(--border-color); border-radius: 8px; }
+.feature-card.on-primary   { background: var(--bg-secondary); }
+.feature-card.on-secondary { background: var(--bg-primary); }
+.feature-card .card-number { display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--accent); }
+.feature-card .card-mark   { position: absolute; top: 24px; right: 22px; color: var(--accent); }
+.feature-card h3 { margin: 58px 0 12px; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.feature-card.no-mark h3 { margin-top: 48px; }
+.feature-card p  { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
+.feature-card.is-hover { border-color: var(--accent); }
+
+.footer-link { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 14px; padding: 8px 0; }

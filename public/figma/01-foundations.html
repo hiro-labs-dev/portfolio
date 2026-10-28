@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Foundations</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { width: 1440px; padding: 80px; }
+  .page-title { margin-bottom: 8px; }
+  .page-sub { margin-bottom: 64px; }
+  .group { margin-bottom: 72px; }
+  .group > h2 { margin-bottom: 8px; }
+  .group > .t-small { margin-bottom: 32px; }
+  .swatch-row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+  .swatch { width: 200px; }
+  .swatch-chip { height: 120px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 12px; }
+  .swatch-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .swatch-meta { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+  .type-row { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: baseline;
+              padding: 28px 0; border-top: 1px solid var(--border-color); }
+  .type-spec .swatch-name { margin-bottom: 6px; }
+  .spacing-row { display: flex; align-items: flex-end; gap: 32px; }
+  .space { text-align: center; }
+  .space-bar { background: var(--accent); opacity: .85; border-radius: 2px; margin: 0 auto 10px; }
+  .radius-row { display: flex; gap: 32px; }
+  .radius-box { width: 140px; height: 100px; background: var(--bg-secondary); border: 1px solid var(--border-color); margin-bottom: 10px; }
+</style></head>
+<body>
+<header id="Foundations-Header">
+  <div class="t-eyebrow">Hiro Labs Design System</div>
+  <h1 class="t-h2 page-title" style="margin-top:14px">Foundations</h1>
+  <p class="t-body page-sub">Colors, type, spacing and radii used across hiro-labs.dev. Create Figma color and text styles from these.</p>
+</header>
+
+<section class="group" id="Colors">
+  <h2 class="t-h3">Color</h2>
+  <p class="t-small">Dark-first palette. One accent (teal); greys carry the hierarchy.</p>
+
+  <div class="swatch-row" id="Colors-Background">
+    <div class="swatch"><div class="swatch-chip" style="background:#0d1117"></div><div class="swatch-name">Background / Primary</div><div class="swatch-meta">#0D1117<br>Page, hero, footer</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#161b22"></div><div class="swatch-name">Background / Secondary</div><div class="swatch-meta">#161B22<br>Alternating sections</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#21262d"></div><div class="swatch-name">Background / Tertiary</div><div class="swatch-meta">#21262D<br>Raised surfaces</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#30363d"></div><div class="swatch-name">Border / Default</div><div class="swatch-meta">#30363D<br>Cards, dividers</div></div>
+  </div>
+  <div class="swatch-row" id="Colors-Text">
+    <div class="swatch"><div class="swatch-chip" style="background:#e6edf3"></div><div class="swatch-name">Text / Primary</div><div class="swatch-meta">#E6EDF3<br>Headings, body emphasis</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#7d8590"></div><div class="swatch-name">Text / Secondary</div><div class="swatch-meta">#7D8590<br>Body copy, nav</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#484f58"></div><div class="swatch-name">Text / Tertiary</div><div class="swatch-meta">#484F58<br>Footer meta, labels</div></div>
+  </div>
+  <div class="swatch-row" id="Colors-Accent">
+    <div class="swatch"><div class="swatch-chip" style="background:#14b8a6"></div><div class="swatch-name">Accent / Default</div><div class="swatch-meta">#14B8A6<br>Buttons, links, eyebrows</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#0f9f90"></div><div class="swatch-name">Accent / Pressed</div><div class="swatch-meta">#0F9F90<br>Primary button hover</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#5eead4"></div><div class="swatch-name">Accent / Light</div><div class="swatch-meta">#5EEAD4<br>Link hover</div></div>
+  </div>
+  <div class="swatch-row" id="Colors-Status">
+    <div class="swatch"><div class="swatch-chip" style="background:#10b981"></div><div class="swatch-name">Status / Success</div><div class="swatch-meta">#10B981</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#f59e0b"></div><div class="swatch-name">Status / Warning</div><div class="swatch-meta">#F59E0B</div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#ef4444"></div><div class="swatch-name">Status / Error</div><div class="swatch-meta">#EF4444</div></div>
+  </div>
+</section>
+
+<section class="group" id="Typography">
+  <h2 class="t-h3">Typography</h2>
+  <p class="t-small">Inter for everything; a monospace for eyebrows, card numbers and categories.</p>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Display</div><div class="swatch-meta">Inter Semibold 64 / 115%<br>Tracking -3% · Mobile 40</div></div><div class="t-display">Practical digital products</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Heading 2</div><div class="swatch-meta">Inter Semibold 42 / 120%<br>Tracking -2% · Mobile 32</div></div><div class="t-h2">Selected Work</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Heading 3</div><div class="swatch-meta">Inter Semibold 20 / 130%<br>Tracking -1%</div></div><div class="t-h3">Websites that pull their weight</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Heading 4</div><div class="swatch-meta">Inter Semibold 18 / 130%</div></div><div class="t-h4">Hiro Labs</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Lead</div><div class="swatch-meta">Inter Regular 18 / 170%</div></div><div class="t-lead">We help you plan, design, and ship the right thing next.</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Body</div><div class="swatch-meta">Inter Regular 16 / 170%</div></div><div class="t-body">A clear, collaborative process that keeps decisions grounded and momentum high.</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Body Small</div><div class="swatch-meta">Inter Regular 14 / 170%</div></div><div class="t-small">Clear, polished sites that help the right people understand what you do.</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Label</div><div class="swatch-meta">Inter Medium 14 · Tracking 0.3px</div></div><div class="t-label">view work</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Overline</div><div class="swatch-meta">Inter Semibold 13 · Caps · Tracking 8%</div></div><div class="t-overline">Hiro Labs</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Eyebrow (Mono)</div><div class="swatch-meta">Mono Medium 12 · Caps · Tracking 8%</div></div><div class="t-eyebrow">What we can help with</div></div>
+  <div class="type-row"><div class="type-spec"><div class="swatch-name">Caption</div><div class="swatch-meta">Inter Regular 13 · Tracking 0.3px</div></div><div class="t-caption">© 2026 Hiro Labs. All rights reserved.</div></div>
+</section>
+
+<section class="group" id="Spacing">
+  <h2 class="t-h3">Spacing</h2>
+  <p class="t-small">Section padding 120 (desktop) · page gutter 48 · content max-width 1200 · card gap 16–32.</p>
+  <div class="spacing-row">
+    <div class="space"><div class="space-bar" style="width:8px;height:8px"></div><div class="swatch-meta">8</div></div>
+    <div class="space"><div class="space-bar" style="width:12px;height:12px"></div><div class="swatch-meta">12</div></div>
+    <div class="space"><div class="space-bar" style="width:16px;height:16px"></div><div class="swatch-meta">16</div></div>
+    <div class="space"><div class="space-bar" style="width:24px;height:24px"></div><div class="swatch-meta">24</div></div>
+    <div class="space"><div class="space-bar" style="width:32px;height:32px"></div><div class="swatch-meta">32</div></div>
+    <div class="space"><div class="space-bar" style="width:48px;height:48px"></div><div class="swatch-meta">48</div></div>
+    <div class="space"><div class="space-bar" style="width:56px;height:56px"></div><div class="swatch-meta">56</div></div>
+    <div class="space"><div class="space-bar" style="width:80px;height:80px"></div><div class="swatch-meta">80</div></div>
+    <div class="space"><div class="space-bar" style="width:120px;height:120px"></div><div class="swatch-meta">120</div></div>
+  </div>
+</section>
+
+<section class="group" id="Radius">
+  <h2 class="t-h3">Radius</h2>
+  <p class="t-small">Small for controls, medium for cards.</p>
+  <div class="radius-row">
+    <div><div class="radius-box" style="border-radius:6px"></div><div class="swatch-name">Radius / Control</div><div class="swatch-meta">6 · Buttons</div></div>
+    <div><div class="radius-box" style="border-radius:8px"></div><div class="swatch-name">Radius / Card</div><div class="swatch-meta">8 · Cards</div></div>
+  </div>
+</section>
+</body></html>
